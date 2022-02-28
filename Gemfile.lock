@@ -171,6 +171,7 @@ GEM
       railties (>= 5.0)
     sqlite3 (1.4.2)
     strscan (3.0.1)
+    table_print (1.5.7)
     thor (1.2.1)
     timeout (0.2.0)
     tzinfo (2.0.4)
@@ -196,6 +197,7 @@ DEPENDENCIES
   rack-cors
   rails (~> 7.0.2, >= 7.0.2.2)
   sqlite3 (~> 1.4)
+  table_print
   tzinfo-data
 
 RUBY VERSION
