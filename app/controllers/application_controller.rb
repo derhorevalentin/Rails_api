@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::API
     before_action :authorized
+ 
   
     def encode_token(payload)
       JWT.encode(payload, 's3cr3t')
@@ -35,5 +36,14 @@ class ApplicationController < ActionController::API
   
     def authorized
       render json: { message: 'Please log in' }, status: :unauthorized unless logged_in?
+    end
+
+    private
+
+    def authenticate_user_edit
+      article_user = Article.find(params[:id]).user
+      unless logged_in_user == article_user
+        redirect_to root_path
+      end
     end
 end
